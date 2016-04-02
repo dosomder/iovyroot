@@ -84,7 +84,6 @@ static char* get_devname(char* name)
 	char* line;
 	static const char* devstr = "ro.product.model=";
 	size_t bufsize = 1024;
-	ssize_t read;
 
 	if(!name)
 		return NULL;
@@ -96,7 +95,7 @@ static char* get_devname(char* name)
 	}
 
 	line = malloc(bufsize);
-	while((read = getline(&line, &bufsize, f)) > 0)
+	while(getline(&line, &bufsize, f) > 0)
 	{
 		if(strncmp(line, devstr, strlen(devstr)) == 0)
 		{

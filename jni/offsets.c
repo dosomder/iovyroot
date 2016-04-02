@@ -37,8 +37,11 @@ struct offsets offsets[] = {
 	//Z5 32.0.A.6.200
 	{ "E6653", "Linux version 3.10.49-perf-g75e6207 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Oct 26 23:20:48 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001950590) },
 	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001887940, (void*)0xffffffc001887748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188429c },
-	//Z5 Premium 32.0.A.6.152
+	//Z5 Dual Sim 32.0.A.6.152
 	{ "E6683", "Linux version 3.10.49-perf-g83fc9bc (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Oct 13 05:33:30 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
+	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },
+	//Z5 Dual Sim 32.0.A.6.209
+	{ "E6683", "Linux version 3.10.49-perf-g2174004 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Nov 13 16:33:06 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
 	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },
 	//Z5 Premium Dual Sim 32.0.A.6.170
 	{ "E6833", "Linux version 3.10.49-perf-g9a3c9a8-04532-g75e6207 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Oct 26 23:20:48 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001950590) },

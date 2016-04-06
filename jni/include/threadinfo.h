@@ -20,7 +20,7 @@ struct list_head {
         struct list_head *next, *prev;
 };
 
-static inline struct thread_info* get_thread_info(long sp)
+static inline struct thread_info* get_thread_info(unsigned long sp)
 {
 	return (struct thread_info*)(sp & ~(THREAD_SIZE - 1));
 }

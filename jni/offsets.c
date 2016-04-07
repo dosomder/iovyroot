@@ -10,6 +10,42 @@
 #if (__LP64__)
 
 struct offsets offsets[] = {
+	//M5 30.0.A.1.23
+	{ "E5603", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ed0ee0, (void*)0xffffffc0011ceeec },
+	//M5 30.1.A.1.33
+	{ "E5603", "Linux version 3.10.72+ (hudsonslave@cnbjlx20401) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:39:24 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011a7208 + 8) },
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000ec53f8, (void*)0xffffffc00119fcec },
+	//M5 30.0.A.1.23
+	{ "E5606", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ed0ee0, (void*)0xffffffc0011ceeec },
+	//M5 30.1.A.1.33
+	{ "E5606", "Linux version 3.10.72+ (hudsonslave@cnbjlx20401) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:39:24 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011a7208 + 8) },
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000ec53f8, (void*)0xffffffc00119fcec },
+	//M5 Dual 30.0.B.1.23
+	{ "E5633", "Linux version 3.10.61+ (hudsonslave@cnbjlx20100) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:39:51 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001224d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ef8ee0, (void*)0xffffffc00121deec },
+	//M5 Dual 30.1.B.1.33
+	{ "E5633", "Linux version 3.10.72+ (hudsonslave@cnbjlx21095) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:04:22 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011f5208 + 8) }, //Xperia M5 uses a different file_operations
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000eed3f8, (void*)0xffffffc0011edcec },
+	//M5 Dual 30.0.B.1.23
+	{ "E5643", "Linux version 3.10.61+ (hudsonslave@cnbjlx20100) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:39:51 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001224d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ef8ee0, (void*)0xffffffc00121deec },
+	//M5 Dual 30.1.B.1.33
+	{ "E5643", "Linux version 3.10.72+ (hudsonslave@cnbjlx21095) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:04:22 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011f5208 + 8) },
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000eed3f8, (void*)0xffffffc0011edcec },
+	//M5 30.0.A.1.23
+	{ "E5653", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ed0ee0, (void*)0xffffffc0011ceeec },
+	//M5 30.1.A.1.33
+	{ "E5653", "Linux version 3.10.72+ (hudsonslave@cnbjlx20401) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:39:24 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011a7208 + 8) },
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000ec53f8, (void*)0xffffffc00119fcec },
+	//M5 Dual 30.0.B.1.23
+	{ "E5663", "Linux version 3.10.61+ (hudsonslave@cnbjlx20100) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:39:51 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001224d90) },
+	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ef8ee0, (void*)0xffffffc00121deec },
+	//M5 Dual 30.1.B.1.33
+	{ "E5663", "Linux version 3.10.72+ (hudsonslave@cnbjlx21095) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Thu Dec 31 17:04:22 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011f5208 + 8) },
+	  (void*)0xffffffc0001e06fc, (void*)0xffffffc0001a8100, NULL, NULL, (void*)0xffffffc000eed3f8, (void*)0xffffffc0011edcec },
 	//Z5C 32.0.A.6.200
 	{ "E5803", "Linux version 3.10.49-perf-g83fc9bc (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Oct 13 05:33:30 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
 	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },

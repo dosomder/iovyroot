@@ -10,6 +10,11 @@
 #if (__LP64__)
 
 struct offsets offsets[] = {
+	//LG G Flex 2, 5.1.1 LMY47S
+	{ "LG-H955", "Linux version 3.10.49-perf-g524d659 (lgmobile@si-rd10-bx56) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Dec 9 11:56:36 KST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001963938) },
+	  (void*)0xffffffc000336ce4, (void*)0xffffffc0003037c8, (void*)0xffffffc00189b9c0, (void*)0xffffffc00189b7c8, (void*)0xffffffc001649320, (void*)0xffffffc001898324 },
+
+	/********************** SONY **********************/
 	//M5 30.0.A.1.23
 	{ "E5603", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },
 	  (void*)0xffffffc0001de6fc, (void*)0xffffffc0001a5e6c, NULL, NULL, (void*)0xffffffc000ed0ee0, (void*)0xffffffc0011ceeec },

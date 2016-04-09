@@ -57,6 +57,9 @@ struct offsets offsets[] = {
 	//Z5C 32.0.A.6.200 Malaysia
 	{ "E5803", "Linux version 3.10.49-perf-g75e6207 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Oct 26 23:20:48 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
 	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },
+	//Z5C 32.0.A.6.152
+	{ "E5803", "Linux version 3.10.49-perf-g83fc9bc (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Oct 13 05:33:30 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
+	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },
 	//Z5C 32.0.A.6.200
 	{ "E5823", "Linux version 3.10.49-perf-g75e6207 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Oct 26 23:20:48 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc00194f590) },
 	  (void*)0xffffffc0003c66e0, (void*)0xffffffc00030f4e0, (void*)0xffffffc001886940, (void*)0xffffffc001886748, (void*)0xffffffc00164ad48, (void*)0xffffffc00188329c },

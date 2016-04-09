@@ -192,6 +192,13 @@ LOAD:FFFFFFC0003C66EC                 BLR             X1
 .text:FFFFFFC0001E0708                 BLR             X1
 */
 	addr[1] = jopret; //[X0,#8]
+
+/* LG Nexus 5X
+0xffffffc0003ee4f0      011040f9       ldr x1, [x0, 0x20]
+0xffffffc0003ee4f4      a0430191       add x0, x29, 0x50
+0xffffffc0003ee4f8      20003fd6       blr x1
+*/
+	addr[4] = jopret; //[x0, 0x20]
 }
 
 #endif

@@ -14,6 +14,12 @@ struct offsets offsets[] = {
 	{ "LG-H955", "Linux version 3.10.49-perf-g524d659 (lgmobile@si-rd10-bx56) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Dec 9 11:56:36 KST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc001963938) },
 	  (void*)0xffffffc000336ce4, (void*)0xffffffc0003037c8, (void*)0xffffffc00189b9c0, (void*)0xffffffc00189b7c8, (void*)0xffffffc001649320, (void*)0xffffffc001898324 },
 
+	//LG Nexus 5X, 6.0.1 MHC19J
+	{ "Nexus 5X", "Linux version 3.10.73-g3e127ab (android-build@wpiz15.hot.corp.google.com) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Feb 9 20:02:25 UTC 2016",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc001cfd430 + 8) },
+	  (void*)0xffffffc0003ee4f0, (void*)0xffffffc0003075b0, (void*)0xffffffc001c364e0,
+	  (void*)0xffffffc001c36520, (void*)0xffffffc0018269ac, (void*)0xffffffc001c3302c },
+
 	/********************** SONY **********************/
 	//M5 30.0.A.1.23
 	{ "E5603", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015", { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },

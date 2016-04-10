@@ -178,6 +178,21 @@ struct offsets offsets[] = {
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fc4f0) },
 	  (void*)0xffffffc0003b9780, (void*)0xffffffc000302688, (void*)0xffffffc0018324b8,
 	  (void*)0xffffffc0018322c0, (void*)0xffffffc001649548, (void*)0xffffffc00182ee1c },
+	//Z4 JP 28.0.B.0.446
+	{ "SO-03G", "Linux version 3.10.49-perf-g897210e (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri May 8 17:36:11 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
+	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
+	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
+	//Z4 JP 28.0.B.0.488
+	{ "SO-03G", "Linux version 3.10.49-perf-ga1be5c2 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Jul 29 19:48:33 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
+	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
+	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
+	//Z4 28.0.B.1.229
+	{ "SO-03G", "Linux version 3.10.49-perf-g497e6be (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Dec 15 15:01:03 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
+	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
+	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
 };
 
 #else

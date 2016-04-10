@@ -23,6 +23,11 @@ struct offsets offsets[] = {
 	  (void*)0xffffffc001c36520, (void*)0xffffffc0018269ac, (void*)0xffffffc001c3302c },
 
 	/********************** SONY **********************/
+	//M4 Aqua 26.1.A.2.147
+	{ "E2303", "Linux version 3.10.49-perf-g8486ae6 (hudsonslave@cnbjlx20365) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Thu Sep 10 07:23:52 CST 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc00112a930) },
+	  (void*)0xffffffc0001aea94, (void*)0xffffffc00017cc78, (void*)0xffffffc001090bd8,
+	  (void*)0xffffffc0010909e0, (void*)0xffffffc000f002d8, (void*)0xffffffc00108d544 },
 	//M5 30.0.A.1.23
 	{ "E5603", "Linux version 3.10.61+ (hudsonslave@cnbjlx20340) (gcc version 4.9 20140514 (mtk-20150408) (GCC) ) #1 SMP PREEMPT Fri Jul 24 17:37:23 CST 2015",
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0011d5d90) },

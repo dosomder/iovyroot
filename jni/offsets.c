@@ -10,6 +10,13 @@
 #if (__LP64__)
 
 struct offsets offsets[] = {
+	/********************** LENOVO **********************/
+	//Vibe P1, LMY47V
+	{ "Lenovo P1a42", "Linux version 3.10.49-perf-gb8aeeef (buildslave@njbs12) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Jan 26 18:24:36 CST 2016",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc00121a520) },
+	  (void*)0xffffffc0001ae450, (void*)0xffffffc00017c70c, (void*)0xffffffc0011808b0,
+	  (void*)0xffffffc0011806b8, (void*)0xffffffc000eff168, (void*)0xffffffc00117d21c },
+
 	/********************** LG **********************/
 	//G Flex 2, 5.1.1 LMY47S
 	{ "LG-H955", "Linux version 3.10.49-perf-g524d659 (lgmobile@si-rd10-bx56) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Dec 9 11:56:36 KST 2015",

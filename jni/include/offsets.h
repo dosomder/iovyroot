@@ -13,8 +13,8 @@ struct offsets {
 		void* check_flags; //ptmx_fops -> check_flags
 	};
 #if (__LP64__)
-	void* joploc; //gadget location
-	void* jopret; //return to setfl after check_flags() (fcntl.c)
+	void* joploc; //gadget location, see getroot.c
+	void* jopret; //return to setfl after check_flags() (fcntl.c), usually inlined in sys_fcntl
 #endif
 	void* sidtab; //optional, for selinux contenxt
 	void* policydb; //optional, for selinux context

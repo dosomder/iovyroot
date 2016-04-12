@@ -205,6 +205,11 @@ struct offsets offsets[] = {
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
 	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
 	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
+	//Z4 28.0.D.6.136
+	{ "SOV31", "Linux version 3.10.49-perf-geaad5d9 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Oct 19 17:21:43 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
+	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
+	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
 };
 
 #else
@@ -214,6 +219,10 @@ struct offsets offsets[] = {
 	{ "D5803", "Linux version 3.4.0-perf-gbe52486 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Sep 17 15:00:01 2015",
 	  { (void*)FSYNC_OFFSET(0xc10ec130) },
 	  (void*)0xc10e0c3c, (void*)0xc10e0b2c, (void*)0xc0f57884, (void*)0xc10df0d8 },
+	//ZR 10.7.A.0.228
+	{ "C5503", "Linux version 3.4.0-perf-gbccb33a (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Fri Jul 10 09:23:01 2015",
+	  { (void*)FSYNC_OFFSET(0xc1073ca0) },
+	  (void*)0xc1059e48, (void*)0xc1059d38, (void*)0xc0ecdfe0, (void*)0xc10582e4 },
 };
 
 #endif /* (__LP64__) */

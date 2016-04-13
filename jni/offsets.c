@@ -210,6 +210,11 @@ struct offsets offsets[] = {
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
 	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
 	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
+	//Z4 28.0.C.4.146
+	{ "402SO", "Linux version 3.10.49-perf-g9d3eaeb (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Feb 29 19:26:35 2016",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc0018fd4f0) },
+	  (void*)0xffffffc0003b7d84, (void*)0xffffffc000301870, (void*)0xffffffc0018334b8,
+	  (void*)0xffffffc0018332c0, (void*)0xffffffc001649548, (void*)0xffffffc00182fe1c },
 };
 
 #else

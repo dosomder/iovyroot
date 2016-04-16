@@ -282,7 +282,6 @@ end:
 static char* get_kernelver(char* str)
 {
 	FILE* f;
-	size_t s;
 
 	if(!str)
 		return NULL;
@@ -293,11 +292,10 @@ static char* get_kernelver(char* str)
 		return NULL;
 	}
 
-	if((s = fread(str, 1, KERNELVER_LEN - 1, f)) > 0)
+	if(fread(str, 1, KERNELVER_LEN - 1, f) > 0)
 	{
-		char* nl = strchr(str, '\n');
-		if(nl)
-			*nl = 0;
+		if(str[strlen(str) - 1] == '\n')
+			str[strlen(str) - 1] = 0;
 		goto end;
 	}
 

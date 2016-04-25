@@ -23,6 +23,11 @@ struct offsets offsets[] = {
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc001963938) },
 	  (void*)0xffffffc000336ce4, (void*)0xffffffc0003037c8, (void*)0xffffffc00189b9c0,
 	  (void*)0xffffffc00189b7c8, (void*)0xffffffc001649320, (void*)0xffffffc001898324 },
+	//G Flex 2, 5.1.1 LMY47S
+	{ "LG-H959", "Linux version 3.10.49-perf-g7db53f8 (lgmobile@LGEACI5R9) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Mon Nov 16 14:32:00 KST 2015",
+	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc001963938) },
+	  (void*)0xffffffc000336c74, (void*)0xffffffc000303758, (void*)0xffffffc00189b9c0,
+	  (void*)0xffffffc00189b7c8, (void*)0xffffffc001649320, (void*)0xffffffc001898324 },
 	//Nexus 5X, 6.0.1 MHC19J
 	{ "Nexus 5X", "Linux version 3.10.73-g3e127ab (android-build@wpiz15.hot.corp.google.com) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Tue Feb 9 20:02:25 UTC 2016",
 	  { (void*)CHECK_FLAGS_OFFSET(0xffffffc001cfd430 + 8) },

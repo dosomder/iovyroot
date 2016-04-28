@@ -8,7 +8,7 @@ int write_at_address_pipe(void* address, void* buf, ssize_t len);
 inline int writel_at_address_pipe(void* address, unsigned long val);
 int modify_task_cred_uc(struct thread_info* info);
 //32bit
-void copyshellcode(void* addr);
+struct thread_info* patchaddrlimit();
 //64bit
 void preparejop(void** addr, void* jopret);
 

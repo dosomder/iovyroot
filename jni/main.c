@@ -5,6 +5,8 @@
 
 #include <netinet/ip.h>
 
+#include <sys/syscall.h>
+
 #include <sys/mman.h>
 #include <sys/uio.h>
 
@@ -113,7 +115,8 @@ static void* writemsg(void* param)
 
 	while(!stop_send)
 	{
-		sendmmsg(sockfd, &msg, 1, 0);
+		//sendmmsg(sockfd, &msg, 1, 0);
+		syscall(__NR_sendmmsg, sockfd, &msg, 1, 0);
 	}
 
 	close(sockfd);

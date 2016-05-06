@@ -303,6 +303,11 @@ static char* get_devname(char* name)
 	}
 
 	line = malloc(bufsize);
+	if (!line) {
+		name = NULL;
+		goto err_mem_alloc;
+	}
+
 	while(getline(&line, &bufsize, f) > 0)
 	{
 		if(strncmp(line, devstr, strlen(devstr)) == 0)
@@ -317,6 +322,7 @@ static char* get_devname(char* name)
 
 end:
 	free(line);
+err_mem_alloc:
 	fclose(f);
 	return name;
 }

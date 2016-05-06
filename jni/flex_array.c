@@ -1,4 +1,3 @@
-
 #include "flex_array.h"
 
 static inline __u32 reciprocal_divide(__u32 A, __u32 R)

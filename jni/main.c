@@ -27,8 +27,8 @@
 #define MMAP_SIZE (0x1000)
 #define MMAP_BASE(i) (MMAP_START + (i) * MMAP_SIZE)
 
-static int kill_switch = 0;
-static int stop_send = 0;
+static volatile int kill_switch = 0;
+static volatile int stop_send = 0;
 static int pipefd[2];
 static struct iovec iovs[IOVECS];
 static struct iovec sendiovs[IOVECS];

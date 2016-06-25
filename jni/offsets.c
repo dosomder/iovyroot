@@ -277,15 +277,43 @@ struct offsets offsets[] = {
 	{ "D5503", "Linux version 3.4.0-perf-gd26777b-00851-ga8b7b55 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Nov 19 10:33:19 2015",
 	  { (void*)FSYNC_OFFSET(0xc10ecb90) },
 	  (void*)0xc10e17fc, (void*)0xc10e16ec, (void*)0xc0f57304, (void*)0xc10dfc98 },
-	//Z1 14.6.A.1.236
+	//Z1_C6902 14.6.A.1.236
+	{ "C6902", "Linux version 3.4.0-perf-gd26777b-00851-ga8b7b55 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Nov 19 10:33:19 2015",
+	  { (void*)FSYNC_OFFSET(0xc10ecb90) },
+	  (void*)0xc10e17fc, (void*)0xc10e16ec, (void*)0xc0f57304, (void*)0xc10dfc98 },
+	//Z1_C6903 14.6.A.1.236
 	{ "C6903", "Linux version 3.4.0-perf-gd26777b-00851-ga8b7b55 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Nov 19 10:33:19 2015",
 	  { (void*)FSYNC_OFFSET(0xc10ecb90) },
 	  (void*)0xc10e17fc, (void*)0xc10e16ec, (void*)0xc0f57304, (void*)0xc10dfc98 },
-	//C3 19.4.A.0.182
+	//Z1_C6906 14.6.A.1.236
+	{ "C6906", "Linux version 3.4.0-perf-gd26777b-00851-ga8b7b55 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Nov 19 10:33:19 2015",
+	  { (void*)FSYNC_OFFSET(0xc10ecb90) },
+	  (void*)0xc10e17fc, (void*)0xc10e16ec, (void*)0xc0f57304, (void*)0xc10dfc98 },
+	//Z1_C6943 14.6.A.1.236
+	{ "C6943", "Linux version 3.4.0-perf-gd26777b-00851-ga8b7b55 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Nov 19 10:33:19 2015",
+	  { (void*)FSYNC_OFFSET(0xc10ecb90) },
+	  (void*)0xc10e17fc, (void*)0xc10e16ec, (void*)0xc0f57304, (void*)0xc10dfc98 },
+	//C3_D2502 19.4.A.0.182
+	{ "D2502", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
+	  { (void*)FSYNC_OFFSET(0xc0fcb018) },
+	  (void*)0xc0fc207c, (void*)0xc0fc1f6c, (void*)0xc0e498e4, (void*)0xc0fc0518 },
+	//C3_D2533 19.4.A.0.182
 	{ "D2533", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
 	  { (void*)FSYNC_OFFSET(0xc0fcb018) },
 	  (void*)0xc0fc207c, (void*)0xc0fc1f6c, (void*)0xc0e498e4, (void*)0xc0fc0518 },
-	//T2u 19.4.A.0.182
+	//T2u_D5303 19.4.A.0.182
+	{ "D5303", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
+	  { (void*)FSYNC_OFFSET(0xc0fcb318) },
+	  (void*)0xc0fc237c, (void*)0xc0fc226c, (void*)0xc0e4a2e4, (void*)0xc0fc0818 },
+	//T2u_D5306 19.4.A.0.182
+	{ "D5306", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
+	  { (void*)FSYNC_OFFSET(0xc0fcb318) },
+	  (void*)0xc0fc237c, (void*)0xc0fc226c, (void*)0xc0e4a2e4, (void*)0xc0fc0818 },
+	//T2u_D5316 19.4.A.0.182
+	{ "D5316", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
+	  { (void*)FSYNC_OFFSET(0xc0fcb318) },
+	  (void*)0xc0fc237c, (void*)0xc0fc226c, (void*)0xc0e4a2e4, (void*)0xc0fc0818 },
+	//T2u_D5322 19.4.A.0.182
 	{ "D5322", "Linux version 3.4.0+ (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Jul 2 12:32:21 2015",
 	  { (void*)FSYNC_OFFSET(0xc0fcb318) },
 	  (void*)0xc0fc237c, (void*)0xc0fc226c, (void*)0xc0e4a2e4, (void*)0xc0fc0818 },

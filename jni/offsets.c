@@ -331,6 +331,10 @@ struct offsets offsets[] = {
 	{ "Nexus 5", "Linux version 3.4.0-gbaedb01 (android-build@vped10.mtv.corp.google.com) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Sat Jan 16 01:19:53 UTC 2016",
 	  { (void*)FSYNC_OFFSET(0xc1337f10) },
 	  (void*)0xc132fefc, (void*)0xc132fdf4, (void*)0xc11770d8, (void*)0xc132e3a0 },
+	//Nexus 5, 5.0.1 LRX22C
+	{ "Nexus 5", "Linux version 3.4.0-g88fbc66 (android-build@vpbs1.mtv.corp.google.com) (gcc version 4.7 (GCC) ) #1 SMP PREEMPT Mon Oct 20 22:18:31 UTC 2014",
+	  { (void*)FSYNC_OFFSET(0xc1236cd8) },
+	  (void*)0xc122ecc0, (void*)0xc122ebb0, (void*)0xc1076be0, (void*)0xc122d164 },
 
 	/********************** ASUS **********************/
 	//Nexus 7 [2013] (Wi-Fi), 4.4.4 KTU84P

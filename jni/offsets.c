@@ -355,6 +355,20 @@ struct offsets offsets[] = {
 	{ "Nexus 6", "Linux version 3.10.40-g557ba38 (android-build@wpiv5.hot.corp.google.com) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Wed Nov 4 00:29:43 UTC 2015",
 	  { (void*)FSYNC_OFFSET(0xc1412450) },
 	  (void*)0xc13971e0, (void*)0xc13970d0, (void*)0xc115072c, (void*)0xc1395678 },
+
+    /********************** HUAWEI ************************/
+	//MediaPad T1-701u, 4.4.2 B006
+	{ "T1-701u", "Linux version 3.10.17-gbf3879f (jslave@wuheatculx00135) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Thu Jun 11 14:53:36 CST 2015",
+	  { (void*)FSYNC_OFFSET(0xc0878a30) },
+	  (void*)0xc0876b5c, (void*)0xc0876a4c, (void*)0xc07e9304, (void*)0xc0874ff8 },
+      //MediaPad T1-701u, 4.4.2 B101
+	{ "T1-701u", "Linux version 3.10.17-gd7b8e16 (jslave@wuheatculx00129) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Sat Nov 21 12:12:27 CST 2015",
+	  { (void*)FSYNC_OFFSET(0xc087cdb0) },
+	  (void*)0xc087aedc, (void*)0xc087adcc, (void*)0xc07eb304, (void*)0xc0879378 },
+      //MediaPad T1-701u, 4.4.2 B102
+	{ "T1-701u", "Linux version 3.10.17-g9935c48 (jslave@wuheatculx00118) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Fri Jan 8 16:34:04 CST 2016",
+	  { (void*)FSYNC_OFFSET(0xc088e530) },
+	  (void*)0xc088c65c, (void*)0xc088c54c, (void*)0xc07fb304, (void*)0xc088aaf8 },
 };
 
 #endif /* (__LP64__) */

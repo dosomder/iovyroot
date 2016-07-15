@@ -357,6 +357,10 @@ struct offsets offsets[] = {
 	  (void*)0xc13971e0, (void*)0xc13970d0, (void*)0xc115072c, (void*)0xc1395678 },
 
     /********************** HUAWEI ************************/
+	//MediaPad T1-701u, 4.4.2 B005
+	{ "T1-701u", "Linux version 3.10.17-gcf73bb7 (jslave@wuheatculx00126) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Tue May 26 14:02:13 CST 2015",
+	  { (void*)FSYNC_OFFSET(0xc0874a30) },
+	  (void*)0xc0872b5c, (void*)0xc0872a4c, (void*)0xc07e5304, (void*)0xc0870ff8 },
 	//MediaPad T1-701u, 4.4.2 B006
 	{ "T1-701u", "Linux version 3.10.17-gbf3879f (jslave@wuheatculx00135) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Thu Jun 11 14:53:36 CST 2015",
 	  { (void*)FSYNC_OFFSET(0xc0878a30) },
@@ -365,6 +369,10 @@ struct offsets offsets[] = {
 	{ "T1-701u", "Linux version 3.10.17-gd7b8e16 (jslave@wuheatculx00129) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Sat Nov 21 12:12:27 CST 2015",
 	  { (void*)FSYNC_OFFSET(0xc087cdb0) },
 	  (void*)0xc087aedc, (void*)0xc087adcc, (void*)0xc07eb304, (void*)0xc0879378 },
+      //MediaPad T1-701u, 4.4.2 B101
+	{ "T1 7.0", "Linux version 3.10.17-g9935c48 (jslave@wuheatculx00128) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Wed Jan 6 11:15:40 CST 2016",
+	  { (void*)FSYNC_OFFSET(0xc088e530) },
+	  (void*)0xc088c65c, (void*)0xc088c54c, (void*)0xc07fb304, (void*)0xc088aaf8 },
       //MediaPad T1-701u, 4.4.2 B102
 	{ "T1-701u", "Linux version 3.10.17-g9935c48 (jslave@wuheatculx00118) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Fri Jan 8 16:34:04 CST 2016",
 	  { (void*)FSYNC_OFFSET(0xc088e530) },

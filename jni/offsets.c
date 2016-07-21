@@ -482,7 +482,7 @@ end:
 		printf("Error: Device not supported\n");
 		printf("Device name: %s\n", devname);
 		printf("Kernel version: %s\n", kernelver);
-    }
+	}
 	free(devname);
 	free(kernelver);
 	return o;

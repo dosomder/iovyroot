@@ -366,7 +366,7 @@ struct offsets offsets[] = {
 	  { (void*)FSYNC_OFFSET(0xc0878a30) },
 	  (void*)0xc0876b5c, (void*)0xc0876a4c, (void*)0xc07e9304, (void*)0xc0874ff8 },
 	//MediaPad T1-701u, 4.4.2 B009
-	{ "T1-701u", "Linux version 3.10.17-g7f6ac8a (jslave@wuheatculx00141) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Tue Sep 15 20:23:48 CST 2015",
+	{ "T1 7.0", "Linux version 3.10.17-g7f6ac8a (jslave@wuheatculx00141) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Tue Sep 15 20:23:48 CST 2015",
 	  { (void*)FSYNC_OFFSET(0xc087aa30) },
 	  (void*)0xc0878b5c, (void*)0xc0878a4c, (void*)0xc07eb304, (void*)0xc0876ff8 },
       //MediaPad T1-701u, 4.4.2 B101

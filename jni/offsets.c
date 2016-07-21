@@ -467,9 +467,6 @@ struct offsets* get_offsets()
 	if(!get_kernelver(kernelver))
 		goto end;
 
-	printf("[+] Device name: %s\n", devname);
-	printf("[+] Kernel version: %s\n", kernelver);
-
 	for(i = 0; i < ARRAYELEMS(offsets); i++)
 	{
 		if(strcmp(devname, offsets[i].devname))
@@ -481,8 +478,11 @@ struct offsets* get_offsets()
 	}
 
 end:
-	if(o == NULL)
+	if(o == NULL) {
 		printf("Error: Device not supported\n");
+		printf("Device name: %s\n", devname);
+		printf("Kernel version: %s\n", kernelver);
+    }
 	free(devname);
 	free(kernelver);
 	return o;

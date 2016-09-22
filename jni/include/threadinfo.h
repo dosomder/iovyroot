@@ -5,7 +5,7 @@
 //32bit structs according to sources from Z3C Lollipop 23.4.A.1.200
 
 #if (__LP64__)
-#define KERNEL_START 0xffffffc000000000
+#define KERNEL_START 0xFFFFFFFF00000000
 #define THREAD_SIZE 16384
 #else
 #define KERNEL_START 0xc0000000

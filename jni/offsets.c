@@ -241,6 +241,18 @@ struct offsets offsets[] = {
 
 struct offsets offsets[] = {
 	/********************** SONY **********************/
+	//Z2 Tablet SGP551 Brazil 23.5.A.0.575
+	{ "SGP551", "Linux version 3.4.0-perf-g43ea728 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Apr 22 17:27:56 2016",
+	  { (void*)FSYNC_OFFSET(0xc1235674) },
+	  (void*)0xc122a08c, (void*)0xc122a0b4, (void*)0xc102f1d0, (void*)0xc1228630 },
+	//Z2 Tablet SGP521 UK 23.5.A.0.575
+	{ "SGP521", "Linux version 3.4.0-perf-g43ea728 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Apr 22 17:27:56 2016",
+	  { (void*)FSYNC_OFFSET(0xc12353b4) },
+	  (void*)0xc1229dcc, (void*)0xc1229df4, (void*)0xc102f1c0, (void*)0xc1228370 },
+	//Z2 Tablet SGP511 UK 23.5.A.0.575
+	{ "SGP511", "Linux version 3.4.0-perf-g43ea728 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Apr 22 17:27:56 2016",
+	  { (void*)FSYNC_OFFSET(0xc1234bb4) },
+	  (void*)0xc12295cc, (void*)0xc12295f4, (void*)0xc102f1c0, (void*)0xc1227b70 },
 	//Z3C 23.4.A.1.264
 	{ "D5803", "Linux version 3.4.0-perf-gbe52486 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Sep 17 15:00:01 2015",
 	  { (void*)FSYNC_OFFSET(0xc10ec130) },

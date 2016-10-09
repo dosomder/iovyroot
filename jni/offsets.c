@@ -253,6 +253,10 @@ struct offsets offsets[] = {
 	{ "SGP511", "Linux version 3.4.0-perf-g43ea728 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Apr 22 17:27:56 2016",
 	  { (void*)FSYNC_OFFSET(0xc1234bb4) },
 	  (void*)0xc12295cc, (void*)0xc12295f4, (void*)0xc102f1c0, (void*)0xc1227b70 },
+	//Z2 Tablet SGP512 UK TW 23.5.A.0.575
+	{ "SGP512", "Linux version 3.4.0-perf-g43ea728 (BuildUser@BuildHost) (gcc version 4.9.x-google 20140827 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Apr 22 17:27:56 2016",
+	  { (void*)FSYNC_OFFSET(0xc1234bb4) },
+	  (void*)0xc12295cc, (void*)0xc12295f4, (void*)0xc102f1c0, (void*)0xc1227b70 },
 	//Z3C 23.4.A.1.264
 	{ "D5803", "Linux version 3.4.0-perf-gbe52486 (BuildUser@BuildHost) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Thu Sep 17 15:00:01 2015",
 	  { (void*)FSYNC_OFFSET(0xc10ec130) },

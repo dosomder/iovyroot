@@ -5,6 +5,7 @@
 
 #include "threadinfo.h"
 #include "sid.h"
+#include "getroot.h"
 
 #define __user
 #define __kernel

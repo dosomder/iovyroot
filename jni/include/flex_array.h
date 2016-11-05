@@ -48,7 +48,11 @@ struct flex_array {
 
 void *flex_array_get(struct flex_array *fa, unsigned int element_nr);
 //safe functions for usercode
+#ifdef __GNUC_GNU_INLINE__ 
 inline unsigned int flex_array_has_element(struct flex_array* fa, unsigned int element_nr);
+#else
+extern inline unsigned int flex_array_has_element(struct flex_array* fa, unsigned int element_nr);
+#endif
 void *flex_array_get_base(struct flex_array *fa, unsigned int element_nr);
 void* flex_array_get_from_part(struct flex_array_part* part, int part_nr, struct flex_array* fa, unsigned int element_nr);
 struct flex_array_part* flex_array_get_part(struct flex_array* fa, unsigned int element_nr, int* partnr);

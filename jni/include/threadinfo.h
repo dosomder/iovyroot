@@ -27,11 +27,12 @@ static inline struct thread_info* get_thread_info(unsigned long sp)
 
 static inline struct thread_info* current_thread_info()
 {
-	register unsigned long sp asm ("sp");
+	unsigned long sp;
+	asm ("mov %[sp], sp" : [sp] "=r" (sp));
 	return get_thread_info(sp);
 }
 
-static inline int is_cpu_timer_valid(struct list_head* cpu_timer) 
+static inline int is_cpu_timer_valid(struct list_head* cpu_timer)
 {
 	if (cpu_timer->next != cpu_timer->prev)
 		return 0;

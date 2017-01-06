@@ -389,6 +389,12 @@ struct offsets offsets[] = {
 	{ "T1-701u", "Linux version 3.10.17-g9935c48 (jslave@wuheatculx00118) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Fri Jan 8 16:34:04 CST 2016",
 	  { (void*)FSYNC_OFFSET(0xc088e530) },
 	  (void*)0xc088c65c, (void*)0xc088c54c, (void*)0xc07fb304, (void*)0xc088aaf8 },
+
+	/********************** XIAOMI ************************/
+	//Xiaomi MI 2, MIUI 7.2.4.0 Android 5.0.2 LRX22G
+	{ "MI 2", "Linux version 3.4.0-perf-g9b728b6-00625-ge66671e (builder@qh-miui-ota-bd53) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Mon Mar 7 20:05:25 CST 2016",
+	  { (void*)FSYNC_OFFSET(0xC12D5298) },
+	  (void*)0xC12BC530, (void*)0xC12BC420, (void*)0xC0F5332C, (void*)0xC12BA9D0 },
 };
 
 #endif /* (__LP64__) */

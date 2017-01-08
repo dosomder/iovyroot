@@ -390,6 +390,14 @@ struct offsets offsets[] = {
 	  { (void*)FSYNC_OFFSET(0xc085ecb0) },
 	  (void*)0xc085cddc, (void*)0xc085cccc, (void*)0xc07e5304, (void*)0xc085b278},	
 	//MediaPad T1-701u, 4.4.2 B005
+	{ "T1-701u", "Linux version 3.10.17-g9c4314c (jslave@wuheatculx00133) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Wed May 6 18:40:01 CST 2015",
+	  { (void*)FSYNC_OFFSET(0xc085ecb0) },
+	  (void*)0xc085cddc, (void*)0xc085cccc, (void*)0xc07e5304, (void*)0xc085b278},
+	//MediaPad T1-701u, 4.4.2 B005
+	{ "T1-701u", "Linux version 3.10.17-ga25a4ce (jslave@wuheatculx00162) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Sat May 9 22:21:56 CST 2015",
+	  { (void*)FSYNC_OFFSET(0xc085ecb0) },
+	  (void*)0xc085cddc, (void*)0xc085cccc, (void*)0xc07e5304, (void*)0xc085b278},
+	//MediaPad T1-701u, 4.4.2 B005
 	{ "T1-701u", "Linux version 3.10.17-gcf73bb7 (jslave@wuheatculx00126) (gcc version 4.7 (GCC) ) #0 SMP PREEMPT Tue May 26 14:02:13 CST 2015",
 	  { (void*)FSYNC_OFFSET(0xc0874a30) },
 	  (void*)0xc0872b5c, (void*)0xc0872a4c, (void*)0xc07e5304, (void*)0xc0870ff8 },

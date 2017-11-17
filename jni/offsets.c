@@ -421,10 +421,16 @@ struct offsets offsets[] = {
 	  (void*)0xC12BC530, (void*)0xC12BC420, (void*)0xC0F5332C, (void*)0xC12BA9D0 },
 
 	/********************** ALCATEL ************************/
-	//Alcatel/TCL 5065D Pop35, 5.1.1 LMY47V
+	//Alcatel/TCL 5065D Pop35, 5.1.1 LMY47V, build 010 02
 	{ "5065D", "Linux version 3.10.49-g17d9d71 (android-bld@aclgcl-ubnt) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Tue Sep 29 19:51:34 CST 2015",
 	  { (void*)FSYNC_OFFSET(0xc0e82728) },
 	  (void*)0xc0e08a40, (void*)0xc0e08930, (void*)0xc0cf76c0, (void*)0xc0e06edc },
+
+	/********************** ALCATEL ************************/
+	//Alcatel/TCL 5065D Pop35, 5.1.1 LMY47V, build 010 03
+	{ "5065D", "Linux version 3.10.49-g542ac41 (android-bld@bld71) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Wed May 18 19:41:28 CST 2016",
+	  { (void*)FSYNC_OFFSET(0xc0e82768) },
+	  (void*)0xc0e08a80, (void*)0xc0e08970, (void*)0xc0cf76c0, (void*)0xc0e06f1c },
 };
 
 #endif /* (__LP64__) */
